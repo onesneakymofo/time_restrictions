@@ -18,13 +18,10 @@ class Restriction
         joiner = day_group.count == 2 ? ', ' : ' - '
         "#{[day_group.first.name, day_group.last.name].join(joiner)}: #{day_group.first.start_time} - #{day_group.first.end_time}"
       else
-        day_group.map do |day|
-          "#{day.name}: #{day.start_time} - #{day.end_time}"
-        end
+        "#{day_group[0].name}: #{day_group[0].start_time} - #{day_group[0].end_time}"
       end
     end
   end
-
 
   def group_days(days)
     grouped_days = []
